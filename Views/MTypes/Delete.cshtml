@@ -1,0 +1,26 @@
+﻿@model $safeprojectname$.Models.MType
+
+@{
+    ViewData["Title"] = "מחיקת סוג פגישה";
+}
+
+<h1>מחיקת ערך</h1>
+
+<h3>האם אתה בטוח שאתה רוצה למחוק סוג פגישה זו?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetingType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MeetingType)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="מחק" class="btn btn-danger" /> |
+        <a asp-action="Index">חזור לרשימה</a>
+    </form>
+</div>

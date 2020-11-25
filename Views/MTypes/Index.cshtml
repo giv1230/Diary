@@ -1,0 +1,35 @@
+﻿@model IEnumerable<$safeprojectname$.Models.MType>
+
+@{
+    ViewData["Title"] = "סוגי פגישות";
+}
+
+<h1>רשימת סוגי פגישות</h1>
+
+<p>
+    <a asp-action="Create">צור חדש</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetingType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">ערוך</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">פרטים</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">מחק</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

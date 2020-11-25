@@ -1,0 +1,23 @@
+﻿@model $safeprojectname$.Models.MType
+
+@{
+    ViewData["Title"] = "פרטי הפגישה";
+}
+
+<h1>פרטי הפגישה</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetingType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MeetingType)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">ערוך</a> |
+    <a asp-action="Index">חזור לרשימה</a>
+</div>

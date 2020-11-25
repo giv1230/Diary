@@ -1,0 +1,63 @@
+﻿@model $safeprojectname$.Models.Meeting
+
+@{
+    ViewData["Title"] = "מחיקת פגישה";
+}
+
+<h1>מחיקת הפגישה</h1>
+
+<h3>האם אתה בטוח שאתה רוצה למחוק את הפגישה?</h3>
+<div>
+    <h4>להלן פרטי הפגישה:</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetingDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MeetingDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Importancy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Importancy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MType.MeetingType)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="מחק" class="btn btn-danger" /> |
+        <a asp-action="Index">חזור לרשימה</a>
+    </form>
+</div>
